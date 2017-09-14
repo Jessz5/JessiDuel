@@ -2,34 +2,31 @@ package duel;
 
 public class CharacterA implements Dueler {
 
-	@Override
-	public void taunt() {
-		// TODO Auto-generated method stub
+	private int hp;
+	
+	public CharacterA() {
 
 	}
-
-	@Override
+	
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "Mimi";
 	}
 
-	@Override
+	public void taunt() {
+		System.out.println("I H8 U");
+	}
+
 	public void setStartingHP(int hp) {
-		// TODO Auto-generated method stub
-		
+		this.hp = hp;
 	}
 
-	@Override
 	public int getHP() {
-		// TODO Auto-generated method stub
-		return 0;
+		return hp;
 	}
 
-	@Override
 	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
-		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	
 }
