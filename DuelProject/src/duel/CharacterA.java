@@ -13,7 +13,13 @@ public class CharacterA implements Dueler {
 	}
 
 	public void taunt() {
-		System.out.println("I H8 U");
+		if(Math.random()<.5)
+		{
+			System.out.println("");
+		}
+		else {
+			System.out.println("I H8 U");
+		}
 	}
 
 	public void setStartingHP(int hp) {
