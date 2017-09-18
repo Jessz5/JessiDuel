@@ -31,8 +31,4 @@ public interface Dueler {
 	//this method is called when you get hit. In the game, if you get hit, you lose 10 hp
 	//this method body should only be executed if Object is an instance of Duel
 	void hit(Object caller);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/Jessz5/JessiDuel.git
