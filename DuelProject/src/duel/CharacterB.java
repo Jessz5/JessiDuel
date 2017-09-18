@@ -1,11 +1,13 @@
 package duel;
 
+import java.util.*;
+
 public class CharacterB implements Dueler {
 
 	private int hp;
 	
 	public CharacterB() {
-
+		setStartingHP(100);
 	}
 	
 	public String getName() {
@@ -13,7 +15,8 @@ public class CharacterB implements Dueler {
 	}
 
 	public void taunt() {
-		System.out.println("I H8 U 2");
+		// other taunts: here i come, show me ur moves
+		System.out.println("I H8 U");
 	}
 
 	public void setStartingHP(int hp) {
@@ -25,15 +28,23 @@ public class CharacterB implements Dueler {
 	}
 
 	public boolean determineIfOpponentIsFair(Dueler d, int hp) {
-		return false;
+		if(hp <= 100)
+			return true;
+		else
+			return false;
 	}
 
 	public int getAction(Object caller) {
-		return 0;
+		Random rand = new Random();
+		//random num:Max=3 , min =0
+		return rand.nextInt(3);
+			
 	}
 
 	public void hit(Object caller) {
-		
+		if(caller instanceof Duel) {
+			hp -= 10;
+		}
 	}
 	
 	
