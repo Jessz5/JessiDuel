@@ -5,13 +5,16 @@ public class CharacterA implements Dueler {
 	private int hp;
 	
 	public CharacterA() {
-
+		setStartingHP(100);
 	}
 
 	static int tauntRandom = 0;
 	public void taunt() {
 		String arrayTaunts[] = {"You can't beat me!","You are going to lose!", "You sure you want to do that next?"};
 		System.out.println(arrayTaunts[tauntRandom]);
+		tauntRandom++;
+		if(tauntRandom > 2)
+			tauntRandom = 0;
 		
 	}
 
@@ -22,7 +25,7 @@ public class CharacterA implements Dueler {
 	static boolean hasHPBeenSet = false;
 	public void setStartingHP(int hp) {
 		if(hasHPBeenSet == false)
-			hp = 100;
+			this.hp = hp;
 		hasHPBeenSet = true;
 	}
 
@@ -41,7 +44,7 @@ public class CharacterA implements Dueler {
 	}
 
 	public void hit(Object caller) {
-		if(obj instanceof Duel)
+		if(caller instanceof Duel)
 			hp = hp - 10;
 	}
 	
