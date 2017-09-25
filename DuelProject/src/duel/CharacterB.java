@@ -15,8 +15,11 @@ public class CharacterB implements Dueler {
 	}
 
 	public void taunt() {
-		// other taunts: here i come, show me ur moves
-		System.out.println("I H8 U");
+		String arrayTaunts[] = {"I H8 U LOL","Here I come!", "Show me your moves!"};
+		System.out.println(arrayTaunts[tauntRandom]);
+		tauntRandom++;
+		if(tauntRandom > 2)
+			tauntRandom = 0;
 	}
 
 	public void setStartingHP(int hp) {
