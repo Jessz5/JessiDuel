@@ -39,10 +39,22 @@ public class CharacterA implements Dueler {
 		return false;
 	}
 
+	static boolean Loaded = false;
 	public int getAction(Object caller) {
-		return (int) ((Math.random() * 3));
+		if(!(caller instanceof Duel) ) {
+			return 3;
+		}else{
+			if(!Loaded)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
 	}
-
+	
 	public void hit(Object caller) {
 		if(caller instanceof Duel)
 			hp = hp - 10;
