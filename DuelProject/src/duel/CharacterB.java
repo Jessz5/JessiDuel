@@ -1,7 +1,5 @@
 package duel;
 
-import java.util.*;
-
 public class CharacterB implements Dueler {
 
 	private int hp;
@@ -38,11 +36,20 @@ public class CharacterB implements Dueler {
 			return false;
 	}
 
+	static boolean Loaded = false;
 	public int getAction(Object caller) {
-		Random rand = new Random();
-		//random num:Max=3 , min =0
-		return rand.nextInt(3);
-			
+		if(!(caller instanceof Duel) )
+			return 3;
+		else{
+			if(!Loaded)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
 	}
 
 	public void hit(Object caller) {
@@ -50,6 +57,5 @@ public class CharacterB implements Dueler {
 			hp -= 10;
 		}
 	}
-	
 	
 }
