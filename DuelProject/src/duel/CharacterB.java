@@ -14,12 +14,13 @@ public class CharacterB implements Dueler {
 		return "Mimi";
 	}
 
+	static int generateRandomTaunt = 0;
 	public void taunt() {
 		String arrayTaunts[] = {"I H8 U LOL","Here I come!", "Show me your moves!"};
-		System.out.println(arrayTaunts[tauntRandom]);
-		tauntRandom++;
-		if(tauntRandom > 2)
-			tauntRandom = 0;
+		System.out.println(arrayTaunts[generateRandomTaunt]);
+		generateRandomTaunt++;
+		if(generateRandomTaunt > 2)
+			generateRandomTaunt = 0;
 	}
 
 	public void setStartingHP(int hp) {
